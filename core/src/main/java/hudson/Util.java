@@ -1147,7 +1147,7 @@ public class Util {
      * @param symlinkPath
      *      Where to create a symlink in (relative to {@code baseDir})
      */
-    public static void createSymlink(@Nonnull File baseDir, @Nonnull String targetPath,
+    public synchronized static void createSymlink(@Nonnull File baseDir, @Nonnull String targetPath,
             @Nonnull String symlinkPath, @Nonnull TaskListener listener) throws InterruptedException {
         try {
             if (createSymlinkJava7(baseDir, targetPath, symlinkPath)) {
